@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cpr/cpr.h>
 #include <nlohmann/json.hpp>
+#include <fmt/core.h>
+#include <string>
 
 int main() {
     // Виконати GET-запит до публічного API
@@ -14,6 +16,10 @@ int main() {
 
     // Вивести певне поле з JSON відповіді
     std::cout << "Title: " << jsonResponse["title"] << std::endl;
+
+    std::string str = jsonResponse["title"];
+    fmt::print("{}\n", str);
+    fmt::print("Program end!\n");
 
     return 0;
 }
